@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+html{
+    font-family: Poppins;
+
+}
+body{
+    background-image: url("./image/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    padding: 40px 40px 0 40px;
+    position: relative;
+}
+#header .logo{
+    width: 105px;
+    height: 80px;
+    padding-top: 40px;
+    position: relative;
+    animation: moveHeader 1.5s;
+}
+#header .logo img{
+    object-fit: cover;
+    width: 100%;
+}
+#header .nav{
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    justify-content: space-around;
+    gap: 20px;
+    font-size: 20px;
+    line-height: 100%;
+    font-weight: 500;
+    width: 15%;
+    position: relative;
+    animation: moveHeader 1.5s;
+    cursor: pointer;
+
+}
+#header .mobile-menu{
+    display: none;
+}
+#header .mobile-menu .nav{
+    display: none;
+}
+.mobile-nav{
+    display: none;
+}
+#container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 70px;
+    animation: moveContainer 1.5s;
+
+}
+#container .title{
+    text-align: center;
+    width: 100%;
+    
+}
+#container .sun{
+    width: 143px;
+    height: 143px;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+#container .sun img{
+    width: 100%;
+    height: 100%;
+}
+
+.mountain{
+    display: flex;
+    width: 100%;
+    max-height: 990px;
+    position: relative;
+    margin-top: 40px;
+}
+.mountain img{
+    width: 100%;
+}
+.mountain .road{
+    position: absolute;
+    top: 36%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+}
+.mountain .road span{
+    position: absolute;
+    left: 30%;
+    bottom: 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    filter: drop-shadow(2px 4px 6px rgb(6, 79, 104));
+}
+#road2 {
+    display: none;
+    opacity: 0;
+    z-index: 1;
+}
+#road1 {
+    display: flex;
+    opacity: 1;
+    z-index: 1;
+}
+.mountain .road img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: opacity .5s ease-in-out;
+}
+@keyframes moveHeader {
+    from {top: 1000px;}
+    to {top: 0px;}
+}
+@keyframes moveContainer {
+  from {top: 200px;}
+  to {top: 0px;}
+}
+@media (max-width: 1440px){
+    html{
+        font-size: 95%;
+    }
+    #header .nav{
+        width: 20%;
+    }
+    .mountain .road{
+        top: 35%;
+    }
+}
+@media (max-width: 1028px) {
+    html{
+        font-size: 85%;
+    }
+    #header .nav{
+        width: 25%;
+    }
+    #header .logo {
+        padding-top: 10px;
+    }
+}
+@media (max-width: 768px) {
+    html{
+        font-size: 70%;
+    }
+    #header .nav{
+        width: 35%;
+    }
+    .mountain {
+        max-height: 695px;
+        height: 600px;
+    }
+    .mountain img{
+        display: block;
+        object-fit: cover;
+    }
+    .mountain .road img{
+        /* height: 695px; */
+
+    }
+    .mountain .road{
+        height: 520px;
+        width: 768px;
+        top: 47%;
+        left: 52%;
+    }
+    .mountain .road span{
+        left: 15%;
+    }
+    #container .title img{
+        height: 25px;
+    }
+    #container .sun{
+        height: 120px;
+        width: 120px;
+    }
+}
+@media (max-width: 440px) {
+    html{
+        font-size: 70%;
+    }
+    #header{
+        height: 55px;
+        padding: 0 20px 0 20px;
+
+    }
+    #header .logo{
+        width: 45px;
+        display: flex;
+        align-items: center;
+    }
+    #header .nav{
+        display: none;
+    }
+    #header .mobile-menu{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    #header .mobile-menu svg{
+        position: absolute;
+        animation: moveHeaderM 1.5s;
+        z-index: 1000;
+    }
+    #header .mobile-menu svg path{
+        fill: #FFFFFF
+    }
+    .mobile-nav{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        z-index: 100;
+        opacity: 0.7;
+        color: #FFFFFF;
+        gap: 10px;
+        font-size: 28px;
+        font-weight: 500;
+    }
+    .mobile-nav .move{
+        position: absolute;
+        animation: moveMobile 1.5s;
+    }
+    #container .title{
+        display: none;
+    }
+    .mountain{
+        max-height: 940px;
+        height: 940px;
+        overflow: hidden;
+    }
+    .mountain img{
+        display: block;
+        object-fit: cover;
+    }
+    
+    #road1{
+        display: none !important;
+    }
+    #road2{
+        display: none !important;
+    }
+}
+@keyframes moveMobile {
+    from {top: 1000px;}
+    to {top: 50%; transform: translateY(-50%);}
+
+}
+@keyframes moveHeaderM {
+    from {top: 1000px;}
+    to {top: 50%;transform: translateY(-50%)}
+}
